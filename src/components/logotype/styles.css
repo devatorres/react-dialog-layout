@@ -1,0 +1,32 @@
+.logo {
+  width: 200px;
+  overflow: visible;
+  cursor: pointer;
+}
+
+.logo .casette {
+  transform-origin: 38% 47%;
+}
+
+.logo .casette.width {
+  animation: rotating 3s linear infinite;
+  animation-play-state: paused;
+  will-change: transform;
+}
+
+.logo:hover .casette {
+  animation: rotating 3s linear infinite;
+}
+
+.logo:hover .casette.width {
+  animation-play-state: running;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

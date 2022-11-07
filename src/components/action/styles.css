@@ -1,0 +1,25 @@
+.before {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  width: calc(840px / 2);
+}
+
+.after {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  width: calc(840px / 2);
+}
+
+:is(.before, .after) h1 {
+  background-color: var(--color-decoration);
+  padding: 0.2rem 0.8rem;
+  border-radius: 8px;
+  font-size: 24px;
+  font-weight: normal;
+  color: var(--color-font);
+  margin-bottom: 3rem;
+}

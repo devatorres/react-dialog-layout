@@ -1,0 +1,23 @@
+.home {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  background-color: transparent;
+  padding: 40px;
+  background: url(../../assets/images/decoration_bottom.png) no-repeat bottom
+    center / contain;
+}
+
+.home main {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.home footer {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+}
