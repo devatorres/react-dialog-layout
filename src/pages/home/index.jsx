@@ -1,18 +1,7 @@
-import Signature from '@/components/signature'
-import Action from '@/components/action'
 import './styles.css'
 
 const Home = () => {
-  return (
-    <div className="home">
-      <main>
-        <Action />
-      </main>
-      <footer>
-        <Signature />
-      </footer>
-    </div>
-  )
+  return <div className="home"></div>
 }
 
 export default Home
