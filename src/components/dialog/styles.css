@@ -13,9 +13,9 @@
 /* Backdrop */
 
 .dialog-backdrop {
-  display: none;
   position: fixed;
   inset: 0;
+  display: flex;
   justify-content: center;
   align-items: center;
   width: 100vw;
@@ -25,8 +25,10 @@
   z-index: 999;
 }
 
-.dialog-backdrop.open {
-  display: flex;
+.dialog-backdrop.close {
+  user-select: none;
+  pointer-events: none;
+  visibility: hidden;
 }
 
 /* Container */
@@ -37,43 +39,47 @@
   align-items: center;
   justify-content: start;
   width: 100%;
-  height: auto;
-  padding-inline: 12px;
-  padding-block: 4rem;
+  padding: 4rem 12px;
   background-color: var(--color-dialog);
   transform: skewY(2deg);
-  animation: openingDialog 250ms ease;
-  box-shadow: rgb(0 0 0 / 20%) 0px 11px 15px -7px,
-    rgb(0 0 0 / 14%) 0px 24px 38px 3px, rgb(0 0 0 / 12%) 0px 9px 46px 8px;
+  will-change: transform, opacity;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 11px 15px -7px,
+    rgba(0, 0, 0, 0.14) 0px 24px 38px 3px, rgba(0, 0, 0, 0.12) 0px 9px 46px 8px;
+}
+
+.dialog-backdrop.open .dialog-container {
+  animation: openingDialog 250ms;
 }
 
 .dialog-container .title {
+  padding: 0;
   margin-bottom: 0.2rem;
-  color: #ffffff;
   font-size: clamp(28px, 4vw, 42px);
   font-weight: 700;
   line-height: 1.2;
-  padding: 0;
+  color: #ffffff;
   text-align: center;
+  will-change: transform, opacity;
+}
 
-  opacity: 0;
-  transform: translateY(-4px);
-  animation: openingTitle 600ms 250ms ease both;
+.dialog-backdrop.open .dialog-container .title {
+  animation: openingTitle 600ms 250ms both;
 }
 
 .dialog-container .subtitle {
+  max-width: 500px;
+  padding-block: 0.5rem;
   margin-bottom: 1.5rem;
-  color: #ffffff;
   font-size: clamp(16px, 2vw, 18px);
   font-weight: 300;
   line-height: 1.2;
-  max-width: 500px;
-  padding-block: 0.5rem;
+  color: #ffffff;
   text-align: center;
+  will-change: transform, opacity;
+}
 
-  opacity: 0;
-  transform: translateY(-8px);
-  animation: openingSubtitle 500ms 300ms ease both;
+.dialog-backdrop.open .dialog-container .subtitle {
+  animation: openingSubtitle 500ms 300ms both;
 }
 
 .dialog-container .btn-action {
@@ -89,15 +95,16 @@
   letter-spacing: 0.6px;
   font-weight: 400;
   cursor: pointer;
+  will-change: transform, opacity;
   transition: background-color 180ms ease;
-
-  opacity: 0;
-  transform: translateY(8px);
-  animation: openingButton 500ms 400ms ease both;
 }
 
 .dialog-container .btn-action:hover {
   background-color: var(--color-button-primary-hover);
+}
+
+.dialog-backdrop.open .dialog-container .btn-action {
+  animation: openingButton 500ms 400ms both;
 }
 
 .dialog-container .btn-cancel {
@@ -114,15 +121,16 @@
   letter-spacing: 0.6px;
   font-weight: 400;
   cursor: pointer;
+  will-change: transform, opacity;
   transition: background-color 180ms ease;
-
-  opacity: 0;
-  transform: translateY(8px);
-  animation: openingButton 500ms 400ms ease both;
 }
 
 .dialog-container .btn-cancel:hover {
   background-color: var(--color-button-secondary-hover);
+}
+
+.dialog-backdrop.open .dialog-container .btn-cancel {
+  animation: openingButton 500ms 400ms both;
 }
 
 @media screen and (max-width: 560px) {

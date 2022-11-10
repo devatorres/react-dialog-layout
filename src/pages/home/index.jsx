@@ -3,12 +3,12 @@ import useOpen from '@/hooks/useOpen'
 import './styles.css'
 
 const Home = () => {
-  const { handleOpenDialog } = useOpen()
+  const { isOpen, handleOpenDialog } = useOpen()
 
   return (
     <div className="home">
       <button
-        className="btn-open-dialog"
+        className={`btn-open-dialog ${isOpen ? 'open' : 'close'}`}
         type="button"
         role="button"
         title="Abrir Dialog"

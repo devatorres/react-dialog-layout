@@ -18,7 +18,13 @@
   letter-spacing: 0.4px;
   color: #ffffff;
   cursor: pointer;
-  transition: background-color 250ms ease;
+  transition-property: background-color, transform;
+  transition-duration: 250ms, 350ms;
+  transition-timing-function: ease;
+}
+
+.btn-open-dialog.open {
+  transform: scale(0.9);
 }
 
 .btn-open-dialog:hover {

@@ -6,7 +6,7 @@ const Dialog = () => {
 
   return (
     <div
-      className={`dialog-backdrop ${isOpen ? 'open' : ''}`}
+      className={`dialog-backdrop ${isOpen ? 'open' : 'close'}`}
       tabIndex="-1"
       role="presentation"
       aria-hidden="true"
