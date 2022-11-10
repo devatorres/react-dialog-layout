@@ -1,15 +1,8 @@
+import useOpen from '@/hooks/useOpen'
 import './styles.css'
 
-const Dialog = (props) => {
-  const { isOpen, setIsOpen } = props
-
-  const handleCloseDialog = () => {
-    setIsOpen(false)
-  }
-
-  const handleStopPropagation = (e) => {
-    e.stopPropagation()
-  }
+const Dialog = () => {
+  const { isOpen, handleCloseDialog, handleStopPropagation } = useOpen()
 
   return (
     <div

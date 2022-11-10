@@ -1,13 +1,9 @@
-import { useState } from 'react'
 import Dialog from '@/components/dialog'
+import useOpen from '@/hooks/useOpen'
 import './styles.css'
 
 const Home = () => {
-  const [isOpen, setIsOpen] = useState(false)
-
-  const handleOpenDialog = () => {
-    setIsOpen(true)
-  }
+  const { handleOpenDialog } = useOpen()
 
   return (
     <div className="home">
@@ -24,7 +20,7 @@ const Home = () => {
       <div className="square small bottom-right rotate" />
       <div className="circle big bottom-left" />
       <div className="circle small top-right" />
-      <Dialog isOpen={isOpen} setIsOpen={setIsOpen} />
+      <Dialog />
     </div>
   )
 }
