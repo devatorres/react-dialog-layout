@@ -9,13 +9,14 @@
 }
 
 :root {
-  --color-app: #071019;
-  --color-dialog: #0a1929;
-  --color-decoration: #0a1829;
+  --color-app: #ffffff;
+  --color-dialog: #fafafa;
+  --color-decoration: #f5f5f5;
   --color-primary: #17b87c;
+  --color-primary-hover: #21e49c;
   --color-button-primary: #e67f19;
   --color-button-primary-hover: #eb9947;
-  --color-button-secondary: #132f4e;
-  --color-button-secondary-hover: #193d67;
+  --color-button-secondary: #e2edf8;
+  --color-button-secondary-hover: #cadef2;
   --color-button-secondary-border: #1980e6;
 }

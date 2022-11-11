@@ -11,7 +11,7 @@
 .btn-open-dialog {
   appearance: none;
   padding: 0.8rem 1.2rem;
-  background-color: var(--color-button-secondary);
+  background-color: var(--color-primary);
   border-radius: 12px;
   border: none;
   font-size: 18px;
@@ -28,7 +28,7 @@
 }
 
 .btn-open-dialog:hover {
-  background-color: var(--color-button-secondary-hover);
+  background-color: var(--color-primary-hover);
 }
 
 .square {
